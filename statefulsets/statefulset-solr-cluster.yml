@@ -58,6 +58,11 @@ spec:
               configMapKeyRef:
                 name: solr-cluster-config
                 key: zkHost
+          - name: ZK_CLIENT_TIMEOUT
+            valueFrom:
+              configMapKeyRef:
+                name: solr-cluster-config
+                key: zkClientTimeout
           - name: POD_HOST_NAME
             valueFrom:
               fieldRef:

@@ -17,7 +17,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: zookeeper
-        image: zookeeper:3.4.14
+        image: zookeeper:3.5.6
         imagePullPolicy: IfNotPresent
         command: 
         - "/bin/sh"
@@ -67,6 +67,41 @@ spec:
               configMapKeyRef:
                 name: zookeeper-ensemble-config
                 key: zooLogDir
+          - name: ZOO_INIT_LIMIT
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooInitLimit
+          - name: ZOO_SYNC_LIMIT
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooSyncLimit
+          - name: ZOO_MAX_CLIENT_CNXNS
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooMaxClientCnxns
+          - name: ZOO_RECONFIG_ENABLED
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooReconfigEnabled
+          - name: ZOO_TICK_TIME
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooTickTime
+          - name: ZOO_MIN_SESSION_TIMEOUT
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooMinSessionTimeout
+          - name: ZOO_MAZ_SESSION_TIMEOUT
+            valueFrom:
+              configMapKeyRef:
+                name: zookeeper-ensemble-config
+                key: zooMaxSessionTimeout
           - name: ZOO_DATA_DIR
             valueFrom:
               configMapKeyRef:
