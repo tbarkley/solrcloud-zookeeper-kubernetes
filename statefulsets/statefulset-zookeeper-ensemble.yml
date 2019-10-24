@@ -97,7 +97,7 @@ spec:
               configMapKeyRef:
                 name: zookeeper-ensemble-config
                 key: zooMinSessionTimeout
-          - name: ZOO_MAZ_SESSION_TIMEOUT
+          - name: ZOO_MAX_SESSION_TIMEOUT
             valueFrom:
               configMapKeyRef:
                 name: zookeeper-ensemble-config
